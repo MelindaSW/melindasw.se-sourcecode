@@ -1,23 +1,27 @@
 <template>
   <div class="home">
-    <Header />
-    <AboutMe />
-    <Footer />
+    <Menu />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
-import AboutMe from '@/components/AboutMe.vue'
+import Menu from '@/components/Menu.vue'
 
 export default {
   name: 'Home',
   components: {
-    Header,
-    Footer,
-    AboutMe
+    Menu
   }
 }
 </script>
+
+<style>
+.home {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+</style>
