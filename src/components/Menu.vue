@@ -1,6 +1,16 @@
 <template>
   <div id="menucontainer">
-    <span class="title">MELINDA SANDSTRÖM-WAGNER</span>
+    <router-link :to="{ name: 'Home' }"
+      ><span class="title">MELINDA SANDSTRÖM-WAGNER</span></router-link
+    >
+    <ul>
+      <router-link :to="{ name: 'Projects' }">
+        <li><span>Projects</span></li></router-link
+      >
+      <router-link :to="{ name: 'Gallery' }">
+        <li><span>Gallery</span></li>
+      </router-link>
+    </ul>
     <div id="contactcontainer">
       <div class="contactitem">
         <a href="mailto:sandstrommelinda@gmail.com?Subject=Hi%20Melinda">
@@ -36,28 +46,43 @@
 export default { name: 'Menu' }
 </script>
 
-<style scoped>
+<style>
 #menucontainer {
   background-color: rgba(90, 129, 144, 0.747);
   color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
-  height: 10%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 78px;
   font-size: 2rem;
   width: 100%;
 }
 
-span {
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  margin: 2rem;
+}
+
+.title {
   margin-left: 2rem;
   margin-right: 2rem;
 }
 
 #contactcontainer {
   background-color: rgb(255, 255, 255);
-  border-radius: 1rem;
+  border-radius: 0.7rem;
   display: flex;
-  margin-left: 3rem;
-  padding: 0.7rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 2%;
+  padding: 0.4rem;
 }
 
 .contactitem {
@@ -67,5 +92,22 @@ span {
 
 img {
   height: 2rem;
+}
+
+a:link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(255, 255, 255);
+}
+
+a:hover {
+  color: rgba(90, 129, 144, 0.788);
+}
+
+a:active {
+  color: rgb(255, 255, 255);
 }
 </style>
