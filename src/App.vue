@@ -1,21 +1,18 @@
 <template>
   <div id="root">
-    <Menu />
+    <NavBar />
     <router-view />
   </div>
 </template>
 
 <script>
-import Menu from '@/components/Menu.vue'
+import NavBar from '@/components/NavBar'
 
 export default {
-  name: 'App',
-
   components: {
-    Menu
+    NavBar
   },
-
-  data: () => ({})
+  name: 'App'
 }
 </script>
 

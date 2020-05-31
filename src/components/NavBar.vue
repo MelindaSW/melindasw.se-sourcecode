@@ -1,16 +1,45 @@
 <template>
-  <div id="menucontainer">
+  <div id="navcontainer">
     <router-link :to="{ name: 'Home' }"
       ><span class="title">MELINDA SANDSTRÖM-WAGNER</span></router-link
     >
-    <ul>
-      <router-link :to="{ name: 'Projects' }">
-        <li><span>Projects</span></li></router-link
+
+    <v-menu
+      v-if="showBars"
+      attach
+      bottom
+      origin="center center"
+      transition="scale-transition"
+    >
+      <template v-slot:activator="{ on }">
+        <v-btn dark icon v-on="on">
+          <v-icon large color="rgb(255, 255, 255)">fas fa-bars</v-icon>
+        </v-btn>
+      </template>
+
+      <v-list>
+        <v-list-item v-for="(item, i) in menuitems" :key="i">
+          <v-list-item-title
+            ><router-link :key="i" :to="{ name: item.title }">
+              <span class="dropdowntext">{{ item.title }}</span>
+            </router-link>
+          </v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+
+    <ul v-else>
+      <router-link
+        v-for="(item, i) in menuitems"
+        :key="i"
+        :to="{ name: item.title }"
       >
-      <router-link :to="{ name: 'Gallery' }">
-        <li><span>Gallery</span></li>
-      </router-link>
+        <li>
+          <span>{{ item.title }}</span>
+        </li></router-link
+      >
     </ul>
+
     <div id="contactcontainer">
       <div class="contactitem">
         <a href="mailto:sandstrommelinda@gmail.com?Subject=Hi%20Melinda">
@@ -43,11 +72,18 @@
 </template>
 
 <script>
-export default { name: 'Menu' }
+export default {
+  data: () => ({
+    menuitems: [{ title: 'Projects' }, { title: 'Gallery' }],
+    showBars: true
+  }),
+  methods: {},
+  name: 'NavBar'
+}
 </script>
 
-<style>
-#menucontainer {
+<style lang="scss">
+#navcontainer {
   background-color: rgba(90, 129, 144, 0.747);
   color: rgb(255, 255, 255);
   display: flex;
@@ -98,16 +134,33 @@ a:link {
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
-
 a:visited {
   color: rgb(255, 255, 255);
 }
-
 a:hover {
   color: rgba(90, 129, 144, 0.788);
 }
-
 a:active {
   color: rgb(255, 255, 255);
+}
+
+.v-list-item__title a {
+  color: rgba(90, 129, 144, 0.788);
+  font-size: 2rem;
+  font-weight: 500;
+  margin: auto;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+  #navcontainer {
+    background-color: green;
+  }
+}
+
+@media screen and (max-width: 1220px) and (min-width: 700px) {
+  #navcontainer {
+    background-color: red;
+  }
 }
 </style>
