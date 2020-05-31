@@ -1,4 +1,6 @@
-# melindasw.se
+# WIP source code for melindasw.se
+Using Vue CLI with Vuetify
+
 
 ## Project setup
 ```
