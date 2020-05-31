@@ -1,46 +1,29 @@
 <template>
-  <div id="navcontainer">
-    <router-link :to="{ name: 'Home' }"
-      ><span class="title">MELINDA SANDSTRÖM-WAGNER</span></router-link
-    >
+  <div id="navcontainer" v-resize="onResize">
+    <span class="title">MELINDA SANDSTRÖM-WAGNER</span>
 
-    <v-menu
-      v-if="showBars"
-      attach
-      bottom
-      origin="center center"
-      transition="scale-transition"
-    >
-      <template v-slot:activator="{ on }">
-        <v-btn dark icon v-on="on">
-          <v-icon large color="rgb(255, 255, 255)">fas fa-bars</v-icon>
-        </v-btn>
-      </template>
-
-      <v-list>
-        <v-list-item v-for="(item, i) in menuitems" :key="i">
-          <v-list-item-title
-            ><router-link :key="i" :to="{ name: item.title }">
-              <span class="dropdowntext">{{ item.title }}</span>
-            </router-link>
-          </v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
-
-    <ul v-else>
-      <router-link
-        v-for="(item, i) in menuitems"
-        :key="i"
-        :to="{ name: item.title }"
-      >
+    <ul v-if="showNavList">
+      <router-link v-for="(item, i) in menuitems" :key="i" :to="{ name: item }">
         <li>
-          <span>{{ item.title }}</span>
+          <span>{{ item }}</span>
         </li></router-link
       >
     </ul>
 
+    <BarsMenu
+      :showBars="showBars"
+      :menuitems="menuitems"
+      color="rgb(255, 255, 255)"
+    />
     <div id="contactcontainer">
+      <div v-if="showMobileBars" class="contactitem">
+        <BarsMenu
+          :showBars="showMobileBars"
+          :menuitems="menuitems"
+          color="rgba(90, 129, 144, 0.747)"
+        />
+      </div>
+
       <div class="contactitem">
         <a href="mailto:sandstrommelinda@gmail.com?Subject=Hi%20Melinda">
           <img src="../assets/gmail-logo.png" />
@@ -72,23 +55,44 @@
 </template>
 
 <script>
+import BarsMenu from './BarsMenu'
 export default {
   data: () => ({
-    menuitems: [{ title: 'Projects' }, { title: 'Gallery' }],
-    showBars: true
+    menuitems: ['Home', 'Projects', 'Gallery'],
+    showBars: false,
+    showMobileBars: false,
+    showNavList: true,
+    windowSize: {
+      x: 0,
+      y: 0
+    }
   }),
-  methods: {},
+  components: {
+    BarsMenu
+  },
+  mounted() {
+    this.onResize()
+  },
+  methods: {
+    onResize() {
+      this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+      this.showBars = this.windowSize.x < 1368 && this.windowSize.x > 955
+      this.showNavList = this.windowSize.x >= 1368
+      this.showMobileBars = this.windowSize.x <= 955
+    }
+  },
   name: 'NavBar'
 }
 </script>
 
-<style lang="scss">
+<style scoped>
 #navcontainer {
   background-color: rgba(90, 129, 144, 0.747);
   color: rgb(255, 255, 255);
   display: flex;
-  align-items: center;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   flex-wrap: nowrap;
   height: 78px;
   font-size: 2rem;
@@ -116,6 +120,7 @@ li {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: center;
   margin-left: auto;
   margin-right: 2%;
   padding: 0.4rem;
@@ -124,6 +129,8 @@ li {
 .contactitem {
   margin-right: 1rem;
   margin-left: 1rem;
+  margin-top: 0.2rem;
+  text-align: center;
 }
 
 img {
@@ -144,23 +151,19 @@ a:active {
   color: rgb(255, 255, 255);
 }
 
-.v-list-item__title a {
-  color: rgba(90, 129, 144, 0.788);
-  font-size: 2rem;
-  font-weight: 500;
-  margin: auto;
-  padding: 1rem;
-}
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 955px) and (min-width: 0px) {
   #navcontainer {
-    background-color: green;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 150px;
+    font-size: 18px;
   }
-}
-
-@media screen and (max-width: 1220px) and (min-width: 700px) {
-  #navcontainer {
-    background-color: red;
+  #contactcontainer {
+    margin: auto;
+  }
+  .title {
+    margin-top: 1rem;
   }
 }
 </style>
