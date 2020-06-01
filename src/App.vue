@@ -19,6 +19,7 @@ export default {
 <style>
 #root {
   background-color: rgb(255, 255, 255);
+  color: rgb(34, 34, 34);
   height: 100%;
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-weight: 500;

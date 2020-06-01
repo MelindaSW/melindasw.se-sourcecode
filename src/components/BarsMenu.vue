@@ -1,6 +1,6 @@
 <template>
   <v-menu
-    v-if="showBars"
+    v-if="display"
     attach
     bottom
     origin="center center"
@@ -26,7 +26,7 @@
 <script>
 export default {
   name: 'BarsMenu',
-  props: ['showBars', 'menuitems', 'color']
+  props: ['display', 'menuitems', 'color']
 }
 </script>
 

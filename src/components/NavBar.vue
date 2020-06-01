@@ -11,14 +11,14 @@
     </ul>
 
     <BarsMenu
-      :showBars="showBars"
+      :display="showBars"
       :menuitems="menuitems"
       color="rgb(255, 255, 255)"
     />
     <div id="contactcontainer">
       <div v-if="showMobileBars" class="contactitem">
         <BarsMenu
-          :showBars="showMobileBars"
+          :display="showMobileBars"
           :menuitems="menuitems"
           color="rgba(90, 129, 144, 0.747)"
         />
@@ -96,6 +96,7 @@ export default {
   flex-wrap: nowrap;
   height: 78px;
   font-size: 2rem;
+  position: fixed;
   width: 100%;
 }
 
@@ -151,12 +152,12 @@ a:active {
   color: rgb(255, 255, 255);
 }
 
-@media screen and (max-width: 955px) and (min-width: 0px) {
+@media screen and (max-width: 955px) {
   #navcontainer {
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 150px;
+    height: 120px;
     font-size: 18px;
   }
   #contactcontainer {
