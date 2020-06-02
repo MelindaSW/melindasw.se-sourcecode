@@ -13,8 +13,8 @@
     </template>
     <v-list>
       <v-list-item v-for="(item, i) in menuitems" :key="i">
-        <v-list-item-title
-          ><router-link :key="i" :to="{ name: item }">
+        <v-list-item-title>
+          <router-link :key="i" :to="{ name: item }">
             <span>{{ item }}</span>
           </router-link>
         </v-list-item-title>
@@ -30,27 +30,26 @@ export default {
 }
 </script>
 
-<style scoped>
-#navcontainer > div.v-menu.v-menu--attached > div > div {
-  padding-top: 1.2rem;
-  padding-bottom: 1.5rem;
-}
+<style lang="sass" scoped>
 
-a:link {
-  color: rgba(90, 129, 144, 0.788);
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: 500;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-a:visited {
-  color: rgba(90, 129, 144, 0.788);
-}
-a:hover {
-  color: rgba(90, 129, 144, 0.788);
-}
-a:active {
-  color: rgba(90, 129, 144, 0.788);
-}
+#navcontainer > div.v-menu.v-menu--attached > div > div
+  padding-top: 1.2rem
+  padding-bottom: 1.5rem
+
+a:link
+  color: $darklink
+  text-decoration: none
+  font-size: 2rem
+  font-weight: 500
+  padding: 1rem
+  margin-bottom: 1rem
+
+a:visited
+  color: $darklink
+
+a:hover
+  color: $darklink
+
+a:active
+  color: $darklink
 </style>

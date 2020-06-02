@@ -16,19 +16,17 @@ export default {
 }
 </script>
 
-<style>
-#root {
-  background-color: rgb(255, 255, 255);
-  color: rgb(34, 34, 34);
-  height: 100%;
-  font-family: 'Barlow Semi Condensed', sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  position: fixed;
-  width: 100%;
-}
+<style lang="sass">
+#root
+  color: $darktext
+  height: 100%
+  min-height: 0
+  font-family: 'Barlow Semi Condensed', sans-serif
+  font-weight: 500
+  font-size: 20px
+  position: absolute
+  width: 100%
 
-.title {
-  font-family: 'Raleway', sans-serif;
-}
+.title
+  font-family: 'Raleway', sans-serif
 </style>
