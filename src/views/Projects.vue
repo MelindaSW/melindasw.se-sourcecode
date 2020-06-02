@@ -1,11 +1,18 @@
 <template>
-  <div>Projects</div>
+  <div id="projects">
+    <span class="title">Projects page, technical portfolio</span>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Gallery'
+  name: 'Projects'
 }
 </script>
 
-<style></style>
+<style lang="sass" scoped>
+#projects
+  margin-top: 150px
+  height: inherited
+  margin-left: 10%
+</style>

@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home'
-import Projects from '../views/Projects'
-import Gallery from '../views/Gallery'
+import { Home, Projects, Gallery } from '../views'
 
 Vue.use(VueRouter)
 

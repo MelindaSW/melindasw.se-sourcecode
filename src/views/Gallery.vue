@@ -1,5 +1,7 @@
 <template>
-  <div>Gallery</div>
+  <div id="gallery">
+    <span class="title">Under construction</span>
+  </div>
 </template>
 
 <script>
@@ -8,4 +10,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="sass" scoped>
+#gallery
+  margin-top: 150px
+  height: inherited
+  margin-left: 10%
+</style>

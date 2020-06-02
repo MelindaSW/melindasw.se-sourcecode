@@ -6,8 +6,8 @@
       <router-link v-for="(item, i) in menuitems" :key="i" :to="{ name: item }">
         <li>
           <span>{{ item }}</span>
-        </li></router-link
-      >
+        </li>
+      </router-link>
     </ul>
 
     <BarsMenu
@@ -85,86 +85,76 @@ export default {
 }
 </script>
 
-<style scoped>
-#navcontainer {
-  background-color: rgba(90, 129, 144, 0.747);
-  color: rgb(255, 255, 255);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
-  height: 78px;
-  font-size: 2rem;
-  position: fixed;
-  width: 100%;
-}
+<style lang="sass" scoped>
+#navcontainer
+  background-color: $primary
+  color: $lighttext
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  flex-wrap: nowrap
+  height: 78px
+  font-size: 2rem
+  position: fixed
+  width: 100%
 
-ul {
-  list-style-type: none;
-}
+ul
+  list-style-type: none
 
-li {
-  display: inline;
-  margin: 2rem;
-}
+li
+  display: inline
+  margin: 2rem
 
-.title {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
+.title
+  margin-left: 2rem
+  margin-right: 2rem
 
-#contactcontainer {
-  background-color: rgb(255, 255, 255);
-  border-radius: 0.7rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: 2%;
-  padding: 0.4rem;
-}
+#contactcontainer
+  background-color: $background
+  border-radius: 0.7rem
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  align-items: center
+  justify-content: center
+  margin-left: auto
+  margin-right: 2%
+  padding: 0.4rem
 
-.contactitem {
-  margin-right: 1rem;
-  margin-left: 1rem;
-  margin-top: 0.2rem;
-  text-align: center;
-}
+.contactitem
+  margin-right: 1rem
+  margin-left: 1rem
+  margin-top: 0.2rem
+  text-align: center
 
-img {
-  height: 2rem;
-}
+img
+  height: 2rem
 
-a:link {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-}
-a:visited {
-  color: rgb(255, 255, 255);
-}
-a:hover {
-  color: rgba(90, 129, 144, 0.788);
-}
-a:active {
-  color: rgb(255, 255, 255);
-}
+a:link
+  color: $lightlink
+  text-decoration: none
 
-@media screen and (max-width: 955px) {
-  #navcontainer {
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 120px;
-    font-size: 18px;
-  }
-  #contactcontainer {
-    margin: auto;
-  }
-  .title {
-    margin-top: 1rem;
-  }
-}
+a:visited
+  color: $lightlink
+
+a:hover
+  color: $darklink
+
+a:active
+  color: $darklink
+
+@media screen and (max-width: 955px)
+  #navcontainer
+    align-items: center
+    flex-direction: column
+    justify-content: space-evenly
+    height: 120px
+    font-size: 18px
+
+  #contactcontainer
+    margin: auto
+
+  .title
+    margin-top: 1rem
 </style>
