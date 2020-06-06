@@ -47,7 +47,7 @@ export default {
 #home
   display: flex
   background-color: $background
-  height: inherit
+  height: fit-content
   flex-direction: row
   padding-top: 4rem
 
@@ -66,6 +66,7 @@ p
   font-size: 2rem
 
 #aboutme
+  background-color: $background
   width: 40%
   margin-top: 90px
   margin-left: 8%
@@ -82,7 +83,7 @@ p
 
   #aboutme
     margin: auto
-    width: 80%
+    width: 90%
 
   .title
     margin-left: auto

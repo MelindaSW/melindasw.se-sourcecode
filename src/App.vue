@@ -18,6 +18,7 @@ export default {
 
 <style lang="sass">
 #root
+  background-color: $background
   color: $darktext
   height: 100%
   min-height: 0

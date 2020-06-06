@@ -156,5 +156,13 @@ a:active
     margin: auto
 
   .title
-    margin-top: 1rem
+    margin: auto
+
+@media screen and (max-width: 570px)
+  #contactcontainer
+    width: 98%
+
+  .title
+    font-size: 19px
+    margin: auto
 </style>
