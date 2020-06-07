@@ -7,9 +7,10 @@
         href="https://www.instagram.com/melindas_crosshatching/"
         target="_blank"
         >instagram </a
-      >. Or take a tour in my
-      <a href="Vr-Gallery/gallery.html" target="_blank">vr gallery</a>, created
-      for an assignment in the client programming course at YRGO</span
+      >. Or take a tour in the
+      <a href="Vr-Gallery/gallery.html" target="_blank">vr gallery</a> I made
+      for an assignment in the client programming course at YRGO. Use the arrow
+      keys and the mouse to "walk around".</span
     >
   </div>
 </template>

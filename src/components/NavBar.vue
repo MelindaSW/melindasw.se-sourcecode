@@ -25,7 +25,7 @@
       </div>
 
       <div class="contactitem">
-        <a href="mailto:sandstrommelinda@gmail.com?Subject=Hi%20Melinda">
+        <a href="mailto:sandstrommelinda@gmail.com?Subject=Hi!">
           <img src="../assets/gmail-logo.png" />
         </a>
       </div>
@@ -98,6 +98,7 @@ export default {
   font-size: 2rem
   position: fixed
   width: 100%
+  z-index:1
 
   ul
     list-style-type: none
@@ -170,9 +171,13 @@ export default {
 
 @media screen and (max-width: 570px)
   #contactcontainer
-    width: 98%
+    width: fit-content
 
   .title
     font-size: 19px
     margin: auto
+
+@media screen and (max-width: 320px)
+  #contactcontainer
+    width: 98%
 </style>
