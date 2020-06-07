@@ -5,41 +5,22 @@
     </figure>
     <main id="aboutme">
       <article>
-        <p>
-          <span class="title">Hi and welcome to my site.</span>
-          My name is Melinda, a thirty something year old Gothenburg resident.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-          ut aliquip ex ea commodo consequat.
-        </p>
-        <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum. Duis aute irure dolor in reprehenderit in voluptate velit
-          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-          cupidatat non
-        </p>
-        <p>
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
-        </p>
-        <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        </p>
+        <span class="title">{{ title }}</span>
+        <template v-for="(paragraph, i) in paragraphs"
+          ><p :key="i">{{ paragraph }}</p></template
+        >
       </article>
     </main>
   </div>
 </template>
 
 <script>
+import { about } from '../textcontent/home'
 export default {
+  data: () => ({
+    title: about.title,
+    paragraphs: about.paragraphs
+  }),
   name: 'Home'
 }
 </script>
@@ -64,7 +45,7 @@ p
   margin-top: 90px
 
 .title
-  font-size: 2rem
+  font-size: 1.5rem
 
 #aboutme
   background-color: $background

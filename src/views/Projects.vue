@@ -11,7 +11,7 @@
 
     <div id="projectitems">
       <div class="projectitem" v-for="(item, i) in projects" :key="i">
-        <v-card class="mx-auto" max-width="344" outlined>
+        <v-card class="mx-auto" outlined>
           <v-card-title class="title">
             {{ item.name }}
           </v-card-title>
@@ -20,7 +20,7 @@
             {{ item.description }}
           </v-card-subtitle>
 
-          <img :src="item.imagesrc" />
+          <img :src="getImgUrl(i)" alt="projectimage" />
 
           <v-card-actions>
             <v-btn outlined><a :href="item.url">Project repo</a></v-btn>
@@ -55,10 +55,11 @@
 </template>
 
 <script>
-import { intro, projects } from '../textcontent/projects'
+import { intro, projects, imageNames } from '../textcontent/projects'
 export default {
   data: () => ({
     intro,
+    imageNames,
     projects,
     showReadMore: { key: null, show: false }
   }),
@@ -66,6 +67,10 @@ export default {
     toggleReadMore(index) {
       this.showReadMore.key = index
       this.showReadMore.show = !this.showReadMore.show
+    },
+    getImgUrl(index) {
+      var images = require.context('../assets/images', false, /\.png$/)
+      return images('./' + imageNames[index] + '.png')
     }
   },
   name: 'Projects'
@@ -88,7 +93,9 @@ export default {
     margin-bottom: 20px
 
 img
-   height: 200px
+   width: 98%
+   height: auto
+   margin: auto
 
 #projectitems
   margin: auto

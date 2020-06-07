@@ -26,7 +26,7 @@
 
       <div class="contactitem">
         <a href="mailto:sandstrommelinda@gmail.com?Subject=Hi!">
-          <img src="../assets/gmail-logo.png" />
+          <img src="../assets/gmail-logo.png" alt="gmail logo" />
         </a>
       </div>
       <div class="contactitem">
@@ -34,12 +34,12 @@
           href="https://www.linkedin.com/in/melinda-sandstr%C3%B6m-wagner/"
           target="_blank"
         >
-          <img src="../assets/linkedin-logo.png" />
+          <img src="../assets/linkedin-logo.png" alt="linkedin logo" />
         </a>
       </div>
       <div class="contactitem">
         <a href="https://github.com/MelindaSW" target="_blank">
-          <img src="../assets/GitHub-Mark-64px.png" />
+          <img src="../assets/GitHub-Mark-64px.png" alt="github logo" />
         </a>
       </div>
       <div class="contactitem">
@@ -47,7 +47,7 @@
           href="https://www.instagram.com/melindas_crosshatching/"
           target="_blank"
         >
-          <img src="../assets/instagram-logo.png" />
+          <img src="../assets/instagram-logo.png" alt="instagram logo" />
         </a>
       </div>
     </div>
