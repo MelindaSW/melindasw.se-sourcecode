@@ -1,12 +1,10 @@
 <template>
   <div id="projects">
-    <!-- <span class="title">Projects page, technical portfolio</span> -->
     <main>
       <div id="intro">
         <p>
-          <span class="title">Welcome to my technical portfolio</span> Lorem
-          ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+          <span class="title">{{ intro.title }}</span>
+          {{ intro.subtitle }}
         </p>
       </div>
     </main>
@@ -32,7 +30,7 @@
             <v-btn outlined @click="toggleReadMore(i)"
               >Read more
               <v-icon>{{
-                showReadMore && showReadMore.key === i
+                showReadMore.show && showReadMore.key === i
                   ? 'mdi-chevron-up'
                   : 'mdi-chevron-down'
               }}</v-icon>
@@ -57,32 +55,11 @@
 </template>
 
 <script>
+import { intro, projects } from '../textcontent/projects'
 export default {
   data: () => ({
-    projects: [
-      {
-        name: 'Lorem ipsum',
-        description:
-          'Ut enim ad minim veniam, quis nostrud exercitatio ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        collaborators: [
-          { name: 'Lorem I', repo: 'link here' },
-          { name: 'Ipsum L', repo: 'link here' }
-        ],
-        imagesrc: '../assets/images/poetry-slack1.png',
-        url: 'https://github.com'
-      },
-      {
-        name: 'Lorem ipsum',
-        description:
-          'Ut enim ad minim veniam, quis nostrud exercitatio ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        collaborators: [
-          { name: 'Lorem I', repo: 'link here' },
-          { name: 'Ipsum L', repo: 'link here' }
-        ],
-        imagesrc: '../assets/images/poetry-slack1.png',
-        url: 'https://github.com'
-      }
-    ],
+    intro,
+    projects,
     showReadMore: { key: null, show: false }
   }),
   methods: {
