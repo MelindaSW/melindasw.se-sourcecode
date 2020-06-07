@@ -16,11 +16,11 @@
       color="rgb(255, 255, 255)"
     />
     <div id="contactcontainer">
-      <div v-if="showMobileBars" class="contactitem">
+      <div v-if="showMobileBars" id="barsicon">
         <BarsMenu
           :display="showMobileBars"
           :menuitems="menuitems"
-          color="rgba(90, 129, 144, 0.747)"
+          color="white"
         />
       </div>
 
@@ -99,50 +99,55 @@ export default {
   position: fixed
   width: 100%
 
-ul
-  list-style-type: none
+  ul
+    list-style-type: none
 
-li
-  display: inline
-  margin: 2rem
+    li
+      display: inline
+      margin: 2rem
 
-.title
-  margin-left: 2rem
-  margin-right: 2rem
+  .title
+    margin-left: 2rem
+    margin-right: 2rem
 
-#contactcontainer
-  background-color: $background
-  border-radius: 0.7rem
-  display: flex
-  flex-direction: row
-  flex-wrap: nowrap
-  align-items: center
-  justify-content: center
-  margin-left: auto
-  margin-right: 2%
-  padding: 0.4rem
+  #contactcontainer
+    background-color: $background
+    border-radius: 0.2rem
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    align-items: center
+    justify-content: center
+    margin-left: auto
+    margin-right: 2%
+    padding: 0.4rem
 
-.contactitem
-  margin-right: 1rem
-  margin-left: 1rem
-  margin-top: 0.2rem
-  text-align: center
+    .contactitem
+      margin-right: 1rem
+      margin-left: 1rem
+      margin-top: 0.2rem
+      text-align: center
 
-img
-  height: 2rem
+  #barsicon
+    margin-right: 1rem
+    margin-left: 1rem
+    text-align: center
 
-a:link
-  color: $lightlink
-  text-decoration: none
+  img
+    height: 2rem
 
-a:visited
-  color: $lightlink
+  a:link
+    color: $lightlink
+    text-decoration: none
 
-a:hover
-  color: $darklink
+  a:visited
+    color: $lightlink
 
-a:active
-  color: $darklink
+  a:hover
+    color: $darklink
+
+  a:active
+    color: $darklink
 
 @media screen and (max-width: 955px)
   #navcontainer
@@ -152,11 +157,16 @@ a:active
     height: 120px
     font-size: 18px
 
-  #contactcontainer
-    margin: auto
+    #contactcontainer
+      margin: auto
 
-  .title
-    margin: auto
+    #barsicon
+      background-color: rgba(90, 129, 144, 0.747)
+      border-radius: 2px
+      padding: 4px
+
+    .title
+      margin: auto
 
 @media screen and (max-width: 570px)
   #contactcontainer

@@ -22,12 +22,12 @@ export default {
   color: $darktext
   height: 100%
   min-height: 0
-  font-family: 'Barlow Semi Condensed', sans-serif
+  font-family: $font-text
   font-weight: 500
   font-size: 20px
   position: absolute
   width: 100%
 
 .title
-  font-family: 'Raleway', sans-serif
+  font-family: $font-title
 </style>

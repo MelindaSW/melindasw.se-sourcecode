@@ -1,15 +1,16 @@
 <template>
   <div id="home">
-    <div id="portrait">
-      <img src="../assets/images/portrait.jpg" alt="portrait" />
-    </div>
-    <div id="aboutme">
+    <figure id="portrait">
+      <img src="../assets/images/portrait.jpg" alt="portrait of author" />
+    </figure>
+    <main id="aboutme">
       <article>
         <p>
-          <span class="title">Lorem ipsum dolor sit amet</span>
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <span class="title">Hi and welcome to my site.</span>
+          My name is Melinda, a thirty something year old Gothenburg resident.
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+          ut aliquip ex ea commodo consequat.
         </p>
         <p>
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -33,7 +34,7 @@
           dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         </p>
       </article>
-    </div>
+    </main>
   </div>
 </template>
 
