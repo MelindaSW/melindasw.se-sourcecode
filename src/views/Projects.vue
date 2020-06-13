@@ -12,39 +12,41 @@
     <div id="projectitems">
       <div class="projectitem" v-for="(item, i) in projects" :key="i">
         <v-card class="mx-auto" outlined>
-          <v-card-title class="title">
-            {{ item.name }}
-          </v-card-title>
+          <v-card-title class="title">{{ item.name }}</v-card-title>
 
-          <v-card-subtitle>
-            {{ item.description }}
-          </v-card-subtitle>
+          <v-card-subtitle>{{ item.description }}</v-card-subtitle>
 
-          <img :src="getImgUrl(i)" alt="projectimage" />
+          <template v-for="(img, i) in item.images">
+            <img :src="getImgUrl(img)" :key="i" alt="projectimage" />
+          </template>
 
           <v-card-actions>
-            <v-btn outlined><a :href="item.url">Project repo</a></v-btn>
+            <v-btn outlined>
+              <a :href="item.url">Project repo</a>
+            </v-btn>
 
             <v-spacer />
 
-            <v-btn outlined @click="toggleReadMore(i)"
-              >Read more
-              <v-icon>{{
-                showReadMore.show && showReadMore.key === i
-                  ? 'mdi-chevron-up'
-                  : 'mdi-chevron-down'
-              }}</v-icon>
+            <v-btn outlined @click="toggleReadMore(i)">
+              Read more
+              <v-icon>
+                {{
+                  showReadMore.show && showReadMore.key === i
+                    ? 'mdi-chevron-up'
+                    : 'mdi-chevron-down'
+                }}
+              </v-icon>
             </v-btn>
           </v-card-actions>
 
           <v-expand-transition>
             <div v-show="showReadMore.show && showReadMore.key === i">
               <v-divider></v-divider>
-              <v-card-text
-                >Collaborators:
+              <v-card-text>
+                Collaborators:
                 <span v-for="(item, i) in item.collaborators" :key="i"
-                  >{{ item.name + '... ' + item.repo }},
-                </span>
+                  >{{ item.name + '... ' + item.repourl }},</span
+                >
               </v-card-text>
             </div>
           </v-expand-transition>
@@ -55,11 +57,10 @@
 </template>
 
 <script>
-import { intro, projects, imageNames } from '../textcontent/projects'
+import { intro, projects } from '../textcontent/projects'
 export default {
   data: () => ({
     intro,
-    imageNames,
     projects,
     showReadMore: { key: null, show: false }
   }),
@@ -68,9 +69,9 @@ export default {
       this.showReadMore.key = index
       this.showReadMore.show = !this.showReadMore.show
     },
-    getImgUrl(index) {
+    getImgUrl(name) {
       var images = require.context('../assets/images', false, /\.png$/)
-      return images('./' + imageNames[index] + '.png')
+      return images('./' + name + '.png')
     }
   },
   name: 'Projects'
@@ -93,13 +94,13 @@ export default {
     margin-bottom: 20px
 
 img
-   width: 98%
-   height: auto
-   margin: auto
+  width: 98%
+  height: auto
+  margin: auto
 
 #projectitems
   margin: auto
-  width:97%
+  width: 97%
 
 .projectitem
   margin-bottom: 20px

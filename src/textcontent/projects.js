@@ -13,7 +13,7 @@ export const projects = [
       { name: 'Lorem I', repo: 'link here' },
       { name: 'Ipsum L', repo: 'link here' }
     ],
-    imgsrc: '../assets/images/ps.png',
+    images: ['ps'],
     url: 'https://github.com'
   },
   {
@@ -21,12 +21,10 @@ export const projects = [
     description:
       'Ut enim ad minim veniam, quis nostrud exercitatio ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     collaborators: [
-      { name: 'Lorem I', repo: 'link here' },
-      { name: 'Ipsum L', repo: 'link here' }
+      { name: 'Lorem I', repourl: 'link here' },
+      { name: 'Ipsum L', repourl: 'link here' }
     ],
-    imgsrc: '../assets/images/ps.png',
+    images: ['ps', 'ps'],
     url: 'https://github.com'
   }
 ]
-
-export const imageNames = ['ps', 'ps']
