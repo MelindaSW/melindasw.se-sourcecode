@@ -1,14 +1,5 @@
 <template>
   <div id="projects">
-    <!-- <main>
-      <div id="intro">
-        <p>
-          <span class="title">{{ intro.title }}</span>
-          {{ intro.subtitle }}
-        </p>
-      </div>
-    </main> -->
-
     <div id="projectitems">
       <div class="projectitem" v-for="(item, i) in projects" :key="i">
         <v-card class="mx-auto" outlined>
@@ -62,12 +53,13 @@ export default {
   data: () => ({
     intro,
     projects,
-    showReadMore: { key: null, show: false }
+    showReadMore: { key: 0, show: false }
   }),
   methods: {
     toggleReadMore(index) {
+      this.showReadMore.show =
+        index === this.showReadMore.key ? !this.showReadMore.show : true
       this.showReadMore.key = index
-      this.showReadMore.show = !this.showReadMore.show
     },
     getImgUrl(name) {
       var images = require.context('../assets/images', false, /\.png$/)
@@ -107,7 +99,7 @@ img
   margin-bottom: 20px
 
 #actions
-  margin-top: 10px
+  margin: 10px
 
 a:link
   color: $darktext
