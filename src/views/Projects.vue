@@ -1,13 +1,13 @@
 <template>
   <div id="projects">
-    <main>
+    <!-- <main>
       <div id="intro">
         <p>
           <span class="title">{{ intro.title }}</span>
           {{ intro.subtitle }}
         </p>
       </div>
-    </main>
+    </main> -->
 
     <div id="projectitems">
       <div class="projectitem" v-for="(item, i) in projects" :key="i">
@@ -20,15 +20,15 @@
             <img :src="getImgUrl(img)" :key="i" alt="projectimage" />
           </template>
 
-          <v-card-actions>
+          <v-card-actions id="actions">
             <v-btn outlined>
-              <a :href="item.url">Project repo</a>
+              <a :href="item.url">Repository</a>
             </v-btn>
 
             <v-spacer />
 
             <v-btn outlined @click="toggleReadMore(i)">
-              Read more
+              More
               <v-icon>
                 {{
                   showReadMore.show && showReadMore.key === i
@@ -43,10 +43,10 @@
             <div v-show="showReadMore.show && showReadMore.key === i">
               <v-divider></v-divider>
               <v-card-text>
-                Collaborators:
+                Collaborators:<br />
                 <span v-for="(item, i) in item.collaborators" :key="i"
-                  >{{ item.name + '... ' + item.repourl }},</span
-                >
+                  >{{ item.name + '... ' + item.repourl }},<br
+                /></span>
               </v-card-text>
             </div>
           </v-expand-transition>
@@ -89,21 +89,25 @@ export default {
   margin: auto
   padding-bottom: 30px
 
-  .title
-    font-weight: normal
-    margin-bottom: 20px
+.title
+  margin: 10px 0 30px 0
 
 img
-  width: 98%
-  height: auto
-  margin: auto
+  border: 2px solid $lightborder
+  width: 90%
+  margin-left: 5%
 
 #projectitems
   margin: auto
   width: 97%
 
 .projectitem
+  border: 2px solid $lightborder
+  border-radius: 0.2rem
   margin-bottom: 20px
+
+#actions
+  margin-top: 10px
 
 a:link
   color: $darktext
@@ -117,4 +121,27 @@ a:hover
 
 a:active
   color: $darktext
+
+@media screen and (min-width: 760px)
+  #intro
+    width: 75%
+
+  #projectitems
+    width: 70%
+
+@media screen and (min-width: 1000px)
+  #intro
+    width: 65%
+
+  #projectitems
+    width: 70%
+    display: flex
+    flex-wrap: wrap
+    align-items: self-start
+    align-content: space-around
+    justify-content: center
+
+  .projectitem
+    width: 45%
+    margin: 20px auto 20px auto
 </style>
