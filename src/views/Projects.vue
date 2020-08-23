@@ -1,11 +1,23 @@
 <template>
   <div id="projects">
+    <main>
+      <div id="intro">
+        <h1 class="title">{{ intro.title }}</h1>
+        <p>
+          {{ intro.subtitle }}
+        </p>
+      </div>
+    </main>
     <div id="projectitems">
       <div class="projectitem" v-for="(item, i) in projects" :key="i">
         <v-card class="mx-auto" outlined>
-          <v-card-title class="title">{{ item.name }}</v-card-title>
+          <v-card-title id="cardtitle" class="title">{{
+            item.name
+          }}</v-card-title>
 
-          <v-card-subtitle>{{ item.description }}</v-card-subtitle>
+          <v-card-subtitle id="subtitle">{{
+            item.description
+          }}</v-card-subtitle>
 
           <template v-for="(img, i) in item.images">
             <img :src="getImgUrl(img)" :key="i" alt="projectimage" />
@@ -33,7 +45,7 @@
           <v-expand-transition>
             <div v-show="showReadMore.show && showReadMore.key === i">
               <v-divider></v-divider>
-              <v-card-text>
+              <v-card-text id="moretext">
                 Collaborators:<br />
                 <span v-for="(item, i) in item.collaborators" :key="i"
                   >{{ item.name + '... ' + item.repourl }},<br
@@ -76,13 +88,23 @@ export default {
   height: fit-content
   margin-top: 150px
 
+h1
+  margin: auto auto 3% auto
+  font-weight: normal
+
 #intro
   width: 90%
   margin: auto
   padding-bottom: 30px
 
-.title
-  margin: 10px 0 30px 0
+#cardtitle
+  font-size: 1.8rem
+  font-weight: normal
+  margin: 2% 5% 2% 5%
+
+#subtitle
+  font-size: 1.1rem
+  margin: 2% 5% 2% 5%
 
 img
   border: 2px solid $lightborder
@@ -98,8 +120,12 @@ img
   border-radius: 0.2rem
   margin-bottom: 20px
 
+#moretext
+  font-size: 1.1rem
+  margin: 3% 5% 3% 5%
+
 #actions
-  margin: 10px
+  margin: 15px
 
 a:link
   color: $darktext
@@ -113,6 +139,7 @@ a:hover
 
 a:active
   color: $darktext
+
 
 @media screen and (min-width: 760px)
   #intro

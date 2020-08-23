@@ -5,10 +5,10 @@
     </figure>
     <main id="aboutme">
       <article>
-        <span class="title">{{ title }}</span>
-        <template v-for="(paragraph, i) in paragraphs"
-          ><p :key="i">{{ paragraph }}</p></template
-        >
+        <h1 class="title">{{ title }}</h1>
+        <template v-for="(paragraph, i) in paragraphs">
+          <p :key="i">{{ paragraph }}</p>
+        </template>
       </article>
     </main>
   </div>
@@ -35,7 +35,7 @@ export default {
 
 img
   border: 4px solid $darkborder
-  height: 400px
+  height: 570px
 
 p
   margin-bottom: 20px
@@ -46,12 +46,13 @@ p
 
 .title
   font-size: 1.5rem
+  margin-bottom: 2rem
 
 #aboutme
   background-color: $background
   width: 40%
   margin-top: 90px
-  margin-left: 8%
+  margin-left: 5%
 
 @media screen and (max-width: 955px)
   #home

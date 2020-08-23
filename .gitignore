@@ -24,4 +24,5 @@ yarn-error.log*
 school-projects
 src/assets/images
 public/Vr-Gallery/media
-src/textcontent
+
+src/textcontent/projects.js
