@@ -1,16 +1,16 @@
 <template>
   <div id="gallery">
     <span class="title"
-      >This page is currently under construction. In the meantime you can find
-      some of my work at my
+      >This page is currently under construction. Some of my drawings can be
+      found on
       <a
         href="https://www.instagram.com/melindas_crosshatching/"
         target="_blank"
         >instagram </a
-      >. Or take a tour in the
-      <a href="Vr-Gallery/gallery.html" target="_blank">vr gallery</a> I made
-      for an assignment in the client programming course at YRGO. Use the arrow
-      keys and the mouse to "walk around".</span
+      >. You can also take a tour in the
+      <a href="Vr-Gallery/gallery.html" target="_blank">vr gallery</a>. It was
+      one of the assignments for a client programming course at YRGO. Use the
+      arrow keys and the mouse to "walk around".</span
     >
   </div>
 </template>
@@ -27,6 +27,7 @@ export default {
   height: inherited
   margin-left: 5%
   margin-right: 5%
+  padding-bottom: 600px
 
   a:link
     color: $darklink

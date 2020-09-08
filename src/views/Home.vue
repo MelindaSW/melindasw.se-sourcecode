@@ -32,6 +32,7 @@ export default {
   height: fit-content
   flex-direction: row
   padding-top: 4rem
+  padding-bottom: 7rem
 
 img
   border: 4px solid $darkborder

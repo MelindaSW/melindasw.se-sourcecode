@@ -3,9 +3,9 @@
     <main>
       <div id="intro">
         <h1 class="title">{{ intro.title }}</h1>
-        <p>
+        <!-- <p>
           {{ intro.subtitle }}
-        </p>
+        </p> -->
       </div>
     </main>
     <div id="projectitems">
@@ -46,10 +46,18 @@
             <div v-show="showReadMore.show && showReadMore.key === i">
               <v-divider></v-divider>
               <v-card-text id="moretext">
-                Collaborators:<br />
-                <span v-for="(item, i) in item.collaborators" :key="i"
-                  >{{ item.name + '... ' + item.repourl }},<br
-                /></span>
+                <h3 class="title" v-if="item.collaborators.length > 0">
+                  Collaborators:
+                </h3>
+                <ul v-for="(item, i) in item.collaborators" :key="i">
+                  <li>
+                    <a :href="item.repourl">{{ item.name }}</a>
+                  </li>
+                </ul>
+                <h3 class="title">Languages and technologies:</h3>
+                <ul v-for="(item, i) in item.technologies" :key="i">
+                  <li>{{ item }}</li>
+                </ul>
               </v-card-text>
             </div>
           </v-expand-transition>
@@ -87,10 +95,17 @@ export default {
   background-color: $background
   height: fit-content
   margin-top: 150px
+  padding-bottom: 6rem
 
 h1
   margin: auto auto 3% auto
   font-weight: normal
+
+h3
+  margin: 5% auto 3% auto
+
+ul
+  margin-left: 5%
 
 #intro
   width: 90%
@@ -129,7 +144,7 @@ img
 
 a:link
   color: $darktext
-  text-decoration: none
+  text-decoration: underline
 
 a:visited
   color: $darktext

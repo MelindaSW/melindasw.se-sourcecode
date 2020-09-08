@@ -2,15 +2,17 @@
   <div id="root">
     <NavBar />
     <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
-import { NavBar } from '@/components'
+import { NavBar, Footer } from '@/components'
 
 export default {
   components: {
-    NavBar
+    NavBar,
+    Footer
   },
   name: 'App'
 }
@@ -21,7 +23,7 @@ export default {
   background-color: $background
   color: $darktext
   height: 100%
-  min-height: 0
+  min-height: 0%
   font-family: $font-text
   font-weight: 500
   font-size: 20px
