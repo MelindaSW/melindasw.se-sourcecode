@@ -3,9 +3,9 @@
     <main>
       <div id="intro">
         <h1 class="title">{{ intro.title }}</h1>
-        <!-- <p>
+        <p>
           {{ intro.subtitle }}
-        </p> -->
+        </p>
       </div>
     </main>
     <div id="projectitems">
@@ -49,13 +49,16 @@
                 <h3 class="title" v-if="item.collaborators.length > 0">
                   Collaborators:
                 </h3>
-                <ul v-for="(item, i) in item.collaborators" :key="i">
+                <ul
+                  v-for="(item, i) in item.collaborators"
+                  :key="item.repourl + i"
+                >
                   <li>
                     <a :href="item.repourl">{{ item.name }}</a>
                   </li>
                 </ul>
                 <h3 class="title">Languages and technologies:</h3>
-                <ul v-for="(item, i) in item.technologies" :key="i">
+                <ul v-for="(item, i) in item.technologies" :key="i + item">
                   <li>{{ item }}</li>
                 </ul>
               </v-card-text>
@@ -64,18 +67,44 @@
         </v-card>
       </div>
     </div>
+    <v-btn
+      v-if="showToTopBtn"
+      id="totopbtn"
+      color="rgba(90, 129, 144, 0.164)"
+      depressed
+      @click="scrollToTop"
+      >To top ^</v-btn
+    >
   </div>
 </template>
 
 <script>
 import { intro, projects } from '../textcontent/projects'
 export default {
+  created() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   data: () => ({
     intro,
     projects,
-    showReadMore: { key: 0, show: false }
+    showReadMore: { key: 0, show: false },
+    showToTopBtn: false
   }),
   methods: {
+    handleScroll() {
+      if (window.scrollY > 200) {
+        this.showToTopBtn = true
+      } else {
+        this.showToTopBtn = false
+      }
+    },
+    scrollToTop() {
+      document.body.scrollTop = 0
+      document.documentElement.scrollTop = 0
+    },
     toggleReadMore(index) {
       this.showReadMore.show =
         index === this.showReadMore.key ? !this.showReadMore.show : true
@@ -141,6 +170,12 @@ img
 
 #actions
   margin: 15px
+
+#totopbtn
+  position: fixed
+  bottom: 20px
+  right: 30px
+  z-index: 99
 
 a:link
   color: $darktext

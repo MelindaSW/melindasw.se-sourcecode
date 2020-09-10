@@ -23,7 +23,7 @@ export default {
   background-color: $background
   color: $darktext
   height: 100%
-  min-height: 0%
+  min-height: 0
   font-family: $font-text
   font-weight: 500
   font-size: 20px
