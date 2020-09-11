@@ -2,7 +2,7 @@
   <v-footer id="footer" padless>
     <v-col class="text-center" cols="12">
       <p>
-        This is a static single page
+        This is a single page
         <a href="https://cli.vuejs.org/">Vue CLI</a> website with components
         from <a href="https://vuetifyjs.com/en/">Vuetify</a>. The sourcecode can
         be found

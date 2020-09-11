@@ -31,7 +31,7 @@
             <v-spacer />
 
             <v-btn outlined @click="toggleReadMore(i)">
-              More
+              Read More
               <v-icon>
                 {{
                   showReadMore.show && showReadMore.key === i
@@ -70,10 +70,11 @@
     <v-btn
       v-if="showToTopBtn"
       id="totopbtn"
-      color="rgba(90, 129, 144, 0.164)"
+      color="rgba(90, 129, 144, 0.747)"
       depressed
+      normal
       @click="scrollToTop"
-      >To top ^</v-btn
+      >To the top</v-btn
     >
   </div>
 </template>
@@ -95,20 +96,15 @@ export default {
   }),
   methods: {
     handleScroll() {
-      if (window.scrollY > 200) {
-        this.showToTopBtn = true
-      } else {
-        this.showToTopBtn = false
-      }
+      this.showToTopBtn = window.scrollY > 200
     },
     scrollToTop() {
-      document.body.scrollTop = 0
-      document.documentElement.scrollTop = 0
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     },
-    toggleReadMore(index) {
+    toggleReadMore(cardIndex) {
       this.showReadMore.show =
-        index === this.showReadMore.key ? !this.showReadMore.show : true
-      this.showReadMore.key = index
+        cardIndex === this.showReadMore.key ? !this.showReadMore.show : true
+      this.showReadMore.key = cardIndex
     },
     getImgUrl(name) {
       var images = require.context('../assets/images', false, /\.png$/)
@@ -173,8 +169,9 @@ img
 
 #totopbtn
   position: fixed
-  bottom: 20px
-  right: 30px
+  bottom: 100px
+  color: white
+  right: 10px
   z-index: 99
 
 a:link
