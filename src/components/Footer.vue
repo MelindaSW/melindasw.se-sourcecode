@@ -13,7 +13,7 @@
         an issue
         <a href="https://github.com/MelindaSW/melindasw.se-sourcecode/issues"
           >here</a
-        >. Alternatively send me an email on sandstrommelinda@gmail.com.
+        >, or email me on sandstrommelinda@gmail.com.
       </p>
     </v-col></v-footer
   >

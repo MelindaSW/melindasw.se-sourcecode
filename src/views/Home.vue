@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <figure id="portrait">
-      <img src="../assets/images/portrait.jpg" alt="portrait of author" />
+      <img src="../assets/images/portrait.jpg" alt="portrait" />
     </figure>
     <main id="aboutme">
       <article>

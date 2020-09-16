@@ -7,10 +7,12 @@
         href="https://www.instagram.com/melindas_crosshatching/"
         target="_blank"
         >instagram </a
-      >. You can also take a tour in the
-      <a href="Vr-Gallery/gallery.html" target="_blank">vr gallery</a>. It was
-      one of the assignments for a client programming course at YRGO. Use the
-      arrow keys and the mouse to "walk around".</span
+      >, or take a tour in the
+      <a href="Vr-Gallery/gallery.html" target="_blank">vr gallery</a>
+      I created for an assignments in the client programming course at YRGO. Use
+      the arrow keys and the mouse to "walk around. It should work in most
+      browsers but can be a bit wonky if you are using your phones
+      browser.</span
     >
   </div>
 </template>
