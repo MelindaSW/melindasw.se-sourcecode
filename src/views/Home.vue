@@ -31,12 +31,12 @@ export default {
   background-color: $background
   height: fit-content
   flex-direction: row
-  padding-top: 4rem
+  padding-top: 10px
   padding-bottom: 7rem
 
 img
   border: 4px solid $darkborder
-  height: 570px
+  height: 530px
 
 p
   margin-bottom: 20px

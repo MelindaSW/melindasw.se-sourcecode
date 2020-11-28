@@ -24,13 +24,13 @@
           </template>
 
           <v-card-actions id="actions">
-            <v-btn outlined>
+            <v-btn outlined tile>
               <a :href="item.url">Repository</a>
             </v-btn>
 
             <v-spacer />
 
-            <v-btn outlined @click="toggleReadMore(i)">
+            <v-btn outlined tile @click="toggleReadMore(i)">
               Read More
               <v-icon>
                 {{
@@ -119,7 +119,7 @@ export default {
 #projects
   background-color: $background
   height: fit-content
-  margin-top: 150px
+  margin-top: 10px
   padding-bottom: 6rem
 
 h1
@@ -156,8 +156,7 @@ img
   width: 97%
 
 .projectitem
-  border: 2px solid $lightborder
-  border-radius: 0.2rem
+  border: 1px solid $darkborder
   margin-bottom: 20px
 
 #moretext

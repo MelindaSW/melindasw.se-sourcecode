@@ -25,21 +25,21 @@ export default {
 
 <style lang="sass" scoped>
 #gallery
-  margin-top: 150px
+  margin-top: 50px
   height: inherited
   margin-left: 5%
   margin-right: 5%
   padding-bottom: 600px
 
-  a:link
-    color: $darklink
+a:link
+  color: $darklink
 
-  a:visited
-    color: $darklink
+a:visited
+  color: $darklink
 
-  a:hover
-    color: $darklink
+a:hover
+  color: $darklink
 
-  a:active
-    color: $darklink
+a:active
+  color: $darklink
 </style>
