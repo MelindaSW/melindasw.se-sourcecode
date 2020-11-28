@@ -113,7 +113,6 @@ export default {
 
   #contactcontainer
     background-color: $background
-    border-radius: 0.2rem
     display: flex
     flex-direction: row
     flex-wrap: nowrap
@@ -128,6 +127,10 @@ export default {
       margin-left: 1rem
       margin-top: 0.2rem
       text-align: center
+
+    .contactitem img:hover
+      background-color: $primary
+      border-radius: 5px
 
   #barsicon
     margin-right: 1rem
