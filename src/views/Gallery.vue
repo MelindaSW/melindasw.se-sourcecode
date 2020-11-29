@@ -1,15 +1,16 @@
 <template>
   <div id="gallery">
     <div id="grid">
-      <div class="griditem" v-for="(item, i) in artCardInfo" :key="i">
-        <ArtCard
-          :imgname="item.img"
-          :mediums="item.mediums"
-          :size="item.size"
-          :sold="item.sold"
-          :title="item.title"
-        />
-      </div>
+      <ArtCard
+        class="griditem"
+        v-for="(item, i) in artCardInfo"
+        :key="i"
+        :imgname="item.img"
+        :mediums="item.mediums"
+        :size="item.size"
+        :sold="item.sold"
+        :title="item.title"
+      />
     </div>
   </div>
 </template>
@@ -29,16 +30,16 @@ export default {
 <style lang="sass" scoped>
 #gallery
   margin-top: 50px
-  padding-bottom: 30px
+  margin-bottom: 60px
   width: 100%
 
   #grid
     display: grid
-    justify-content: center
-    grid-gap: 1rem
+    grid-gap: 4rem
     grid-auto-flow: row
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
-    width: 100%
+    height: fit-content
+    width: 90%
     margin: auto
 
     .griditem
