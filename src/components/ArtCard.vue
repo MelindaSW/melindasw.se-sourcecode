@@ -1,5 +1,5 @@
 <template>
-  <v-card outlined class="card rounded-0" max-width="400">
+  <v-card tile flat class="card rounded-0">
     <div>
       <v-img class="img align-end" :src="getImgUrl(imgname)"></v-img>
     </div>
@@ -14,6 +14,7 @@
         <span v-for="(item, i) in mediums" :key="i">
           <span>{{ item }} | </span>
         </span>
+        <p>{{ price ? `Price: ${price}  SEK` : 'Not for sale' }}</p>
       </v-card-text>
     </div>
   </v-card>
@@ -22,7 +23,7 @@
 <script>
 export default {
   name: 'ArtCard',
-  props: ['imgname', 'mediums', 'size', 'sold', 'title'],
+  props: ['imgname', 'mediums', 'price', 'size', 'sold', 'title'],
   methods: {
     getImgUrl(name) {
       var images = require.context('../assets/images/gallery', false, /\.jpg$/)
@@ -35,19 +36,21 @@ export default {
 <style lang="sass" scoped>
 .card
     height: fit-content
+    margin: auto
 
 .img
     border: 3px solid $darkborder
 
 .subtitle
     font-size: 1.2rem
-    font-weight: bold
+    font-weight: bolder
 
 .sold
     color: $primary
 
 .text
-    background-color: $primaryopaque
-    margin-top: 3rem
-    margin-bottom: 3rem
+    background-color: $artcardprimary
+    font-weight: bold
+    margin-top: 2rem
+    margin-bottom: 2rem
 </style>
