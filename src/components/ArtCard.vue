@@ -9,12 +9,12 @@
       </v-card-subtitle>
 
       <v-card-text class="text--primary">
-        <p>Size: {{ size.width }} X {{ size.height }}</p>
+        <p>Size: {{ size.width }} X {{ size.height }} cm</p>
         Mediums:
         <span v-for="(item, i) in mediums" :key="i">
           <span>{{ item }} | </span>
         </span>
-        <p>{{ price ? `Price: ${price}  SEK` : 'Not for sale' }}</p>
+        <p>{{ forsale ? `For sale - email for price` : 'Not for sale' }}</p>
       </v-card-text>
     </div>
   </v-card>
@@ -23,10 +23,10 @@
 <script>
 export default {
   name: 'ArtCard',
-  props: ['imgname', 'mediums', 'price', 'size', 'sold', 'title'],
+  props: ['forsale', 'imgname', 'mediums', 'size', 'sold', 'title'],
   methods: {
     getImgUrl(name) {
-      var images = require.context('../assets/images/gallery', false, /\.jpg$/)
+      var images = require.context('../assets/images/gallery', false, /\.jpeg$/)
       return images('./' + name)
     }
   }
@@ -51,6 +51,5 @@ export default {
 .text
     background-color: $artcardprimary
     font-weight: bold
-    margin-top: 2rem
-    margin-bottom: 2rem
+    margin-top: 1.5rem
 </style>

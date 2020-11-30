@@ -2,16 +2,22 @@
   <div id="gallery">
     <header>
       <h1 class="title">{{ galleryText.title }}</h1>
-      <a href="Vr-Gallery/gallery.html" target="_blank">vr gallery</a>
+      <p class="subtitle">
+        {{ galleryText.paragraphs[0] }}
+      </p>
+      <p>
+        {{ galleryText.paragraphs[1] }}
+        <a href="Vr-Gallery/gallery.html" target="_blank">VR GALLERY</a>
+      </p>
     </header>
     <div id="grid">
       <ArtCard
         class="griditem"
         v-for="(item, i) in artCardInfo"
         :key="i"
+        :forsale="item.forsale"
         :imgname="item.img"
         :mediums="item.mediums"
-        :price="item.price"
         :size="item.size"
         :sold="item.sold"
         :title="item.title"
@@ -48,7 +54,17 @@ export default {
     text-align: center
     width: 100%
     margin-top: 2rem
-    margin-bottom: 3rem
+    margin-bottom: 4rem
+
+    h1
+      margin-bottom: 2rem
+      font-weight: lighter
+
+    p
+      margin: 20px auto 20px auto
+      width: 90%
+      text-align: left
+      font-size: 1.1rem
 
   #grid
     display: grid
@@ -77,5 +93,5 @@ a:active
 
 @media screen and (min-width: 500px)
   #gallery
-    width: 80%
+    width: 70%
 </style>
