@@ -46,9 +46,10 @@ export default {
   name: 'Gallery',
   methods: {
     handleModal(image) {
-      this.showModal = !this.showModal
-      this.imageInModal = require('../assets/images/gallery/' + image)
-      console.log('handlemodal', this.showModal)
+      this.showModal = !this.showModal && window.innerWidth > 700
+      this.imageInModal = image
+        ? require('../assets/images/gallery/' + image)
+        : this.imageInModal
     }
   }
 }

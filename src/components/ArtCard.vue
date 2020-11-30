@@ -24,9 +24,6 @@
 
 <script>
 export default {
-  // data: () => ({
-  //   dialog: false
-  // }),
   name: 'ArtCard',
   props: ['forsale', 'imgname', 'mediums', 'size', 'sold', 'title'],
   methods: {
@@ -58,6 +55,3 @@ export default {
     font-weight: bold
     margin-top: 1.5rem
 </style>
-<!--
-        @click="() => (dialog = true)"
-        -->
