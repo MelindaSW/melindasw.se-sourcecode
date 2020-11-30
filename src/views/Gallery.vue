@@ -21,21 +21,36 @@
         :size="item.size"
         :sold="item.sold"
         :title="item.title"
+        @open-modal="handleModal(item.img)"
+      />
+      <ArtModal
+        v-if="showModal"
+        :image="imageInModal"
+        @close-modal="handleModal"
       />
     </div>
   </div>
 </template>
 
 <script>
-import { ArtCard } from '@/components'
+import { ArtCard, ArtModal } from '@/components'
 import { artCardInfo, galleryText } from '../textcontent/gallery'
 export default {
-  components: { ArtCard },
+  components: { ArtCard, ArtModal },
   data: () => ({
     artCardInfo,
-    galleryText
+    galleryText,
+    showModal: false,
+    imageInModal: ''
   }),
-  name: 'Gallery'
+  name: 'Gallery',
+  methods: {
+    handleModal(image) {
+      this.showModal = !this.showModal
+      this.imageInModal = require('../assets/images/gallery/' + image)
+      console.log('handlemodal', this.showModal)
+    }
+  }
 }
 </script>
 

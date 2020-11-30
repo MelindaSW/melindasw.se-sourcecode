@@ -1,5 +1,5 @@
 <template>
-  <v-card tile flat class="card rounded-0">
+  <v-card @click="$emit('open-modal')" tile flat class="card rounded-0">
     <div>
       <v-img class="img align-end" :src="getImgUrl(imgname)"></v-img>
     </div>
@@ -14,7 +14,9 @@
         <span v-for="(item, i) in mediums" :key="i">
           <span>{{ item }} | </span>
         </span>
-        <p>{{ forsale ? `For sale - email for price` : 'Not for sale' }}</p>
+        <p>
+          {{ forsale ? `For sale - email for price` : 'Not for sale' }}
+        </p>
       </v-card-text>
     </div>
   </v-card>
@@ -22,6 +24,9 @@
 
 <script>
 export default {
+  // data: () => ({
+  //   dialog: false
+  // }),
   name: 'ArtCard',
   props: ['forsale', 'imgname', 'mediums', 'size', 'sold', 'title'],
   methods: {
@@ -53,3 +58,6 @@ export default {
     font-weight: bold
     margin-top: 1.5rem
 </style>
+<!--
+        @click="() => (dialog = true)"
+        -->
