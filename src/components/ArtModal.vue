@@ -1,9 +1,30 @@
 <template>
   <transition name="modal">
-    <div class="modal-mask" @click="$emit('close-modal')">
+    <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
           <img :src="image" alt="Larger image" />
+        </div>
+        <div class="buttons">
+          <v-btn
+            class="mx-2"
+            @click="$emit('previous')"
+            fab
+            small
+            color="primary"
+            ><v-icon> mdi-arrow-left </v-icon>
+          </v-btn>
+          <v-btn
+            class="mx-2"
+            @click="$emit('close-modal')"
+            fab
+            medium
+            color="primary"
+            ><v-icon large> mdi-close </v-icon>
+          </v-btn>
+          <v-btn class="mx-2" @click="$emit('next')" fab small color="primary"
+            ><v-icon> mdi-arrow-right </v-icon>
+          </v-btn>
         </div>
       </div>
     </div>
@@ -50,6 +71,15 @@ export default {
 
 img
     width: 100%
+
+.buttons
+  text-align: center
+  z-index: 1
+
+
+  .mx-2
+    margin: 10px
+    color: $primary
 
 /*
  * The following styles are auto-applied to elements with

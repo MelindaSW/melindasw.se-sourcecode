@@ -38,7 +38,7 @@ export default {
 <style lang="sass" scoped>
 .card
     height: fit-content
-    margin: auto
+    // margin: auto
 
 .img
     border: 3px solid $darkborder

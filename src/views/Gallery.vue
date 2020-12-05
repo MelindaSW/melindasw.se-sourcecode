@@ -21,12 +21,14 @@
         :size="item.size"
         :sold="item.sold"
         :title="item.title"
-        @open-modal="handleModal(item.img)"
+        @open-modal="handleModal(true, i)"
       />
       <ArtModal
         v-if="showModal"
         :image="imageInModal"
-        @close-modal="handleModal"
+        @previous="handleModal(true, 1, 'decrement')"
+        @next="handleModal(true, 1, 'increment')"
+        @close-modal="handleModal(false)"
       />
     </div>
   </div>
@@ -41,15 +43,21 @@ export default {
     artCardInfo,
     galleryText,
     showModal: false,
-    imageInModal: ''
+    imageInModal: '',
+    currentIndex: 0
   }),
   name: 'Gallery',
   methods: {
-    handleModal(image) {
-      this.showModal = !this.showModal && window.innerWidth > 700
-      this.imageInModal = image
-        ? require('../assets/images/gallery/' + image)
-        : this.imageInModal
+    handleModal(show, index = 0, command = '') {
+      index =
+        command === 'increment'
+          ? this.currentIndex++
+          : command === 'decrement'
+          ? this.currentIndex--
+          : index
+      this.imageInModal = require('../assets/images/gallery/' +
+        artCardInfo[index].img)
+      this.showModal = show && window.innerWidth > 700
     }
   }
 }
@@ -90,10 +98,6 @@ export default {
     height: fit-content
     width: 100%
     margin: auto
-
-    .griditem
-      margin: auto
-      align-self: center
 
 a:link
   color: $darklink
