@@ -26,8 +26,8 @@
       <ArtModal
         v-if="showModal"
         :image="imageInModal"
-        @previous="handleModal(true, 1, 'decrement')"
-        @next="handleModal(true, 1, 'increment')"
+        @previous="handleModal(true, 1, 'prev')"
+        @next="handleModal(true, 1, 'next')"
         @close-modal="handleModal(false)"
       />
     </div>
@@ -49,14 +49,21 @@ export default {
   name: 'Gallery',
   methods: {
     handleModal(show, index = 0, command = '') {
-      index =
-        command === 'increment'
-          ? this.currentIndex++
-          : command === 'decrement'
-          ? this.currentIndex--
-          : index
+      if (command === 'next') {
+        this.currentIndex += 1
+        if (this.currentIndex >= artCardInfo.length) {
+          this.currentIndex = 0
+        }
+      } else if (command === 'prev') {
+        this.currentIndex -= 1
+        if (this.currentIndex < 0) {
+          this.currentIndex = artCardInfo.length - 1
+        }
+      } else {
+        this.currentIndex = index
+      }
       this.imageInModal = require('../assets/images/gallery/' +
-        artCardInfo[index].img)
+        artCardInfo[this.currentIndex].img)
       this.showModal = show && window.innerWidth > 700
     }
   }
