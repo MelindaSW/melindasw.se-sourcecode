@@ -3,28 +3,33 @@
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
+          <div class="buttons">
+            <v-btn
+              class="mx-2"
+              @click="$emit('previous')"
+              small
+              icon
+              color="primary"
+              ><v-icon> mdi-arrow-left </v-icon>
+            </v-btn>
+            <v-btn
+              class="mx-2 close-button"
+              @click="$emit('close-modal')"
+              small
+              icon
+              color="primary"
+              ><v-icon large> mdi-close </v-icon>
+            </v-btn>
+            <v-btn
+              class="mx-2"
+              @click="$emit('next')"
+              small
+              icon
+              color="primary"
+              ><v-icon medium> mdi-arrow-right </v-icon>
+            </v-btn>
+          </div>
           <img :src="image" alt="Larger image" />
-        </div>
-        <div class="buttons">
-          <v-btn
-            class="mx-2"
-            @click="$emit('previous')"
-            fab
-            small
-            color="primary"
-            ><v-icon> mdi-arrow-left </v-icon>
-          </v-btn>
-          <v-btn
-            class="mx-2"
-            @click="$emit('close-modal')"
-            fab
-            medium
-            color="primary"
-            ><v-icon large> mdi-close </v-icon>
-          </v-btn>
-          <v-btn class="mx-2" @click="$emit('next')" fab small color="primary"
-            ><v-icon> mdi-arrow-right </v-icon>
-          </v-btn>
         </div>
       </div>
     </div>
@@ -56,10 +61,13 @@ export default {
 .modal-wrapper
   display: table-cell
   vertical-align: middle
+  display: flex
+  justify-content: center
+  align-items: center
 
 .modal-container
   width: 550px
-  margin: 0px auto
+  margin: 25px auto
   padding: 15px 15px
   background-color: #fff
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.33)
@@ -70,16 +78,18 @@ export default {
   margin: 20px 0
 
 img
-    width: 100%
+  width: 100%
 
 .buttons
-  text-align: center
-  z-index: 1
+  margin: 0px auto 10px auto
+  display: flex
+  justify-content: center
+  padding: 3px
+  width: fit-content
 
-
-  .mx-2
-    margin: 10px
-    color: $primary
+  .close-button
+    margin-right: 10px
+    margin-left: 10px
 
 /*
  * The following styles are auto-applied to elements with
