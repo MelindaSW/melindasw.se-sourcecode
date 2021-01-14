@@ -81,7 +81,7 @@ export default {
 
 img
   width: auto
-  height: 85vh
+  max-height: 85vh
 
 .buttons
   margin: 10px auto 10px auto

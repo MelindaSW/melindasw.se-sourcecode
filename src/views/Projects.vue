@@ -67,40 +67,21 @@
         </v-card>
       </div>
     </div>
-    <v-btn
-      v-if="showToTopBtn"
-      id="totopbtn"
-      color="rgba(90, 129, 144, 0.747)"
-      depressed
-      normal
-      @click="scrollToTop"
-      >To the top</v-btn
-    >
+    <ToTopButton />
   </div>
 </template>
 
 <script>
+import { ToTopButton } from '@/components'
 import { intro, projects } from '../textcontent/projects'
 export default {
-  created() {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  destroyed() {
-    window.removeEventListener('scroll', this.handleScroll)
-  },
+  components: { ToTopButton },
   data: () => ({
     intro,
     projects,
-    showReadMore: { key: 0, show: false },
-    showToTopBtn: false
+    showReadMore: { key: 0, show: false }
   }),
   methods: {
-    handleScroll() {
-      this.showToTopBtn = window.scrollY > 200
-    },
-    scrollToTop() {
-      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-    },
     toggleReadMore(cardIndex) {
       this.showReadMore.show =
         cardIndex === this.showReadMore.key ? !this.showReadMore.show : true
@@ -166,26 +147,9 @@ img
 #actions
   margin: 15px
 
-#totopbtn
-  position: fixed
-  bottom: 100px
-  color: white
-  right: 10px
-  z-index: 99
-
-a:link
+a:link, a:visited, a:hover, a:active
   color: $darktext
   text-decoration: underline
-
-a:visited
-  color: $darktext
-
-a:hover
-  color: $darktext
-
-a:active
-  color: $darktext
-
 
 @media screen and (min-width: 760px)
   #intro

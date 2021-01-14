@@ -35,14 +35,15 @@
         @close-modal="handleModal(false)"
       />
     </masonry>
+    <ToTopButton />
   </div>
 </template>
 
 <script>
-import { ArtCard, ArtModal } from '@/components'
+import { ArtCard, ArtModal, ToTopButton } from '@/components'
 import { artCardInfo, galleryText } from '../textcontent/gallery'
 export default {
-  components: { ArtCard, ArtModal },
+  components: { ArtCard, ArtModal, ToTopButton },
   data: () => ({
     artCardInfo,
     galleryText,
