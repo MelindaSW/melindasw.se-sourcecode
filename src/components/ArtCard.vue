@@ -42,8 +42,8 @@ export default {
     transition: transform 0.1s ease-in
     &:hover
       background-color: $primaryopaque
-      z-index: 1
       transform: scale(1.1)
+      -webkit-transform: scale(1.1)
 
 .img
     border: 3px solid $darkborder

@@ -53,7 +53,7 @@ export default {
   left: 0
   width: 100%
   height: 100%
-  background-color: rgba(0, 0, 0, 0.3)
+  background-color: rgba(0, 0, 0, 0.7)
   display: table
   transition: opacity 0.3s ease
   overflow: auto
@@ -66,9 +66,11 @@ export default {
   align-items: center
 
 .modal-container
-  width: 550px
+  border: 2px solid $darkborder
+  width: auto
+  height: fit-content
   margin: 25px auto
-  padding: 15px 15px
+  padding: 10px 10px
   background-color: #fff
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.33)
   transition: all 0.3s ease
@@ -78,13 +80,14 @@ export default {
   margin: 20px 0
 
 img
-  width: 100%
+  width: auto
+  height: 85vh
 
 .buttons
-  margin: 0px auto 10px auto
+  margin: 10px auto 10px auto
   display: flex
   justify-content: center
-  padding: 3px
+  padding: 5px
   width: fit-content
 
   .close-button
