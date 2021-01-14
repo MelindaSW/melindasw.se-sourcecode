@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './routes'
 import store from './store'
 import vuetify from './plugins/vuetify'
+import VueMasonry from 'vue-masonry-css'
+
+Vue.use(VueMasonry)
 
 Vue.config.productionTip = false
 

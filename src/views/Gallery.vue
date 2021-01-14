@@ -10,7 +10,11 @@
         <a href="Vr-Gallery/gallery.html" target="_blank">VR GALLERY</a>
       </p>
     </header>
-    <div id="grid">
+    <masonry
+      id="grid"
+      :cols="{ default: 3, 1500: 2, 1000: 1 }"
+      :gutter="{ default: '30px', 1500: '16px' }"
+    >
       <ArtCard
         class="griditem"
         v-for="(item, i) in artCardInfo"
@@ -30,7 +34,7 @@
         @next="handleModal(true, 1, 'next')"
         @close-modal="handleModal(false)"
       />
-    </div>
+    </masonry>
   </div>
 </template>
 
@@ -98,27 +102,17 @@ export default {
       font-size: 1.1rem
 
   #grid
-    display: grid
-    grid-gap: 4rem
-    grid-auto-flow: row
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr))
     height: fit-content
     width: 100%
     margin: auto
 
-a:link
-  color: $darklink
-
-a:visited
-  color: $darklink
-
-a:hover
-  color: $darklink
-
+a:link,
+a:visited,
+a:hover,
 a:active
   color: $darklink
 
 @media screen and (min-width: 500px)
   #gallery
-    width: 70%
+    width: 80%
 </style>
