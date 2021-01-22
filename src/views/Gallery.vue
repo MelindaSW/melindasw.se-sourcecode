@@ -5,7 +5,7 @@
       <p class="subtitle">
         {{ galleryText.paragraphs[0] }}
       </p>
-      <p>
+      <p class="subtitle">
         {{ galleryText.paragraphs[1] }}
         <a href="Vr-Gallery/gallery.html" target="_blank">VR GALLERY</a>
       </p>
@@ -15,7 +15,7 @@
       :cols="{ default: 3, 1500: 2, 1000: 1 }"
       :gutter="{ default: '30px', 1500: '16px' }"
     >
-      <ArtCard
+      <art-card
         class="griditem"
         v-for="(item, i) in artCardInfo"
         :key="i"
@@ -27,7 +27,7 @@
         :title="item.title"
         @open-modal="handleModal(true, i)"
       />
-      <ArtModal
+      <art-modal
         v-if="showModal"
         :image="imageInModal"
         @previous="handleModal(true, 1, 'prev')"
@@ -35,7 +35,7 @@
         @close-modal="handleModal(false)"
       />
     </masonry>
-    <ToTopButton />
+    <to-top-button />
   </div>
 </template>
 
@@ -112,6 +112,10 @@ a:visited,
 a:hover,
 a:active
   color: $darklink
+
+@media screen and (min-width: 1500px)
+  #gallery header p
+    width: 70%
 
 @media screen and (min-width: 500px)
   #gallery

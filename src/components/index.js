@@ -1,6 +1,7 @@
 export { default as BarsMenu } from './BarsMenu'
 export { default as NavBar } from './NavBar'
-export { default as Footer } from './Footer'
+export { default as AppFooter } from './AppFooter'
 export { default as ArtCard } from './ArtCard'
 export { default as ArtModal } from './ArtModal'
 export { default as ToTopButton } from './ToTopButton'
+export { default as ProjectItems } from './ProjectItems'

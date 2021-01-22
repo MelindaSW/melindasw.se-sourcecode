@@ -47,7 +47,7 @@
 </template>
 
 <script>
-export default { name: 'Footer' }
+export default { name: 'AppFooter' }
 </script>
 
 <style lang="sass" scoped>
