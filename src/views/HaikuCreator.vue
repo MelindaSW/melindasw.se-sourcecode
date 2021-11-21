@@ -2,9 +2,11 @@
   <v-container fluid>
     <p class="description">
       This is a random haiku generator. <br />Submit a minimum of 25 characters
-      and maximum 3000 to generate a randomized haiku based on the provided
-      text. The somewhat reliable syllable counter works with swedish and
-      english syllable rules.
+      and maximum 3000 to generate a randomized haiku (sort of) based on the
+      provided text. The somewhat reliable syllable counter works with swedish
+      and english syllable rules.<br />
+      The result is not always the prettiest, but keep submitting and perhaps a
+      better result comes up.
     </p>
     <v-textarea
       solo
