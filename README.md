@@ -1,5 +1,6 @@
-# Source code for [melindasw.se]()
+# Source code for [melindasw.netlify.app]()
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cf53765e-60ba-41c3-9460-c9f62a444361/deploy-status)](https://app.netlify.com/sites/melindasw/deploys)
 
 ## Project setup
 ```
