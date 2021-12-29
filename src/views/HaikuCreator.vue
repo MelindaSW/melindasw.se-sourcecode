@@ -56,7 +56,8 @@ export default {
           'Content-Type': 'application/json'
         },
         body: data
-      }).catch((err) => console.log(err))
+      })
+      //.catch((err) => /*console.log(err)*/)
 
       const haikuresp = await response.json()
       this.haiku = haikuresp.haiku
