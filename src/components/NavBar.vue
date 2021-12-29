@@ -58,7 +58,8 @@
 import BarsMenu from './BarsMenu'
 export default {
   data: () => ({
-    menuitems: ['Home', 'Projects', 'Gallery', 'HaikuCreator'],
+    menuitems: ['Home', 'Projects', 'Gallery' /*
+    , 'HaikuCreator'*/],
     showBars: false,
     showMobileBars: false,
     showNavList: true,
