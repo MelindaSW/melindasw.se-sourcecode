@@ -1,0 +1,137 @@
+<!-- Page will contain a biref history of ink. With links to sources. -->
+
+<!DOCTYPE html>
+<html lang="sv" dir="ltr">
+
+   <head>
+      <meta charset="utf-8">
+      <title>Tuschets historia</title>
+      <link rel="stylesheet" href="index.css">
+   </head>
+
+   <body>
+
+      <h1>Historia</h1>
+      <img src="media/ink-in-circle.jpeg" alt="ink-circle" height="600" id='inkcircleimg'>
+      <aside><em><strong>"All inks are a means and method of communication – the first and longest-running form of information technology." - Lydia Pyne, History Today</strong></em></aside>
+
+      <h2>Ursprung</h2>
+      <p>
+         &#127778;
+         Några av de tidigaste fynden av tusch kommer från det 23e århundadet före kristus, i egypten. Där ersatte tusch och vasspennor lertavleskriften.
+         För över 2000 år sedan började man också tillverka tusch i Kina. Traditionellt tillverkas det av ett sotpigment som blandas med ett vattenlösligt bindemedel av animaliska limämnen. Det pressas ihop till en tuschstång och torkas. Stången
+         rivs med en tuschsten, som har olika grovlek beroende på hur fint man vill att pigmentet ska vara, samt lite vatten.
+         Tusch har även hittats i fynd från Mayariket. Många kulturer utvecklade egna recept runt om i världen, mer eller mindre framgångsrikt. Färgen kom oftast från sot.
+      </p>
+
+      <h2>Verktyg</h2>
+      <p><img src="media/quill.jpeg" alt="quill" height="400"></p>
+      &#127778;Det finns och har funnits många sätt att få ut det mesta av tuschets egenskaper genom tiderna. De vanligaste, som också används än i dag i vardagligt bruk är:
+
+      <!-- Organized list with unorganized nested list -->
+      <ol>
+         <li>
+            Kalligrafipennor
+            <ul>
+               <li>
+                  Pennor med metallspetsar som doppades i tusch användes redan i antikens rom. Dock blev de inte riktigt populära förrän de började massproduceras i slutet av 1900 talet. Idag används de främst för kalligrafi och finns i en mängd
+                  utformningar och former på spetsarna.
+               </li>
+            </ul>
+         </li>
+         <li>
+            Reservoarpennor
+            <ul>
+               <li>
+                  Trots att det fanns pennor med behållare för tusch redan i 1000-talet så blev de inte uppfunna <em>på riktigt</em>, så som vi känner igen dem, förrän i slutet av 1800-talet. Men redan på 1600-talet skapade en Daniel Schwenter en
+                  penna som förvarade tuschet på insidan av pennan.
+               </li>
+            </ul>
+         </li>
+         <li>
+            Fiberspetspennan
+            <ul>
+               <li>
+                  Den första fiberspetspennan uppfanns i Japan på 1960-talet. Moderna versioner av denna kallas markers och överstrykningspennor.
+               </li>
+            </ul>
+         </li>
+      </ol>
+
+      <h2></h2>
+      <!-- Unorganized list with links -->
+      <h3>Källor</h3>
+      <ul>
+         <li><a href="https://en.wikipedia.org/wiki/Ink">Wiki</a></li>
+         <li><a href="http://www.historyofpencils.com/writing-instruments-history/history-of-ink-and-pen/">History of Pencils</a></li>
+         <li><a href="https://www.historytoday.com/history-matters/history-ink-six-objects">History Today</a></li>
+      </ul>
+
+      <h4>Var detta intressant?</h4>
+      <p>
+         &#127778; Vill du få veckovisa mail med kuriosa om tush skickade till dig? Fyll då i dina uppgifter nedan.
+      </p>
+      <!-- Form -->
+      <form action="register.txt" method="get">
+         <fieldset>
+            <legend>&#127778; Obligatoriska uppgifter</legend>
+
+            Förnamn:
+            <input type="text" name="first-name" placeholder="Förnamn">
+
+            Efternamn:
+            <input type="text" name="second-name" placeholder="Efternamn">
+
+            Email:
+            <input type="email" name="email" placeholder="Email">
+
+            Ålder:
+            <input type="text" name="age" placeholder="Ålder">
+
+         </fieldset>
+
+         <br>
+
+         <fieldset>
+            <legend>&#127778; Övriga uppgifter</legend>
+
+            <strong>&#127778; Välj ett eller flera alternativ nedan om det är något specifikt område du vill veta mer om.</strong>
+            <!-- Checkboxes -->
+            <label><input type="checkbox" name="interested-in" value="material-history"> Materialhistoria</label>
+            <label><input type="checkbox" name="interested-in" value="production"> Tillverkning</label>
+            <label><input type="checkbox" name="interested-in" value="art-history"> Konsthistoria</label>
+            <label><input type="checkbox" name="interested-in" value="art-techniques"> Tekniker i konst</label>
+            <label><input type="checkbox" name="interested-in" value="chinese-ink-painting"> Kinesiskt tuschmåleri</label>
+            <label><input type="checkbox" name="interested-in" value="japanese-ink-painting"> Japanskt tuschmåleri</label>
+            <!-- Radio buttons -->
+            <strong>&#127778; Kön:</strong>
+            <label><input type="radio" name="gender" value="Kvinna"> Kvinna</label>
+            <label><input type="radio" name="gender" value="Man"> Man</label>
+            <label><input type="radio" name="gender" value="Annat"> Annat</label>
+            <!-- Selection menu -->
+            <strong>&#127778; Välj det språk du föredrar</strong>
+            <select name="language">
+               <option value="swedish">Svenska</option>
+               <option value="english">Engelska</option>
+               <option value="german">Deutsche</option>
+               <option value="norwegian">Norsk</option>
+               <option value="spanish">Espa&#241;ol</option>
+            </select>
+
+            <textarea name="more-information" rows="4" cols="80" placeholder="Skriv här om det du har särskilda önskemål eller tips om innehåll."></textarea>
+            <input type="reset" value="Rensa"> <input type="submit" name="submit" value="Skicka">
+
+         </fieldset>
+      </form>
+
+      <footer>
+         <span>
+            By Melinda Sandström-Wagner.
+         </span>
+         <span id="contact">
+            Contact: sandstrom.melinda@gmail.com
+         </span>
+      </footer>
+   </body>
+
+</html>
