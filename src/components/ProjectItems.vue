@@ -118,6 +118,7 @@ img
   margin: auto
 
 #moretext
+  text-align: left
   font-size: 1.1rem
   margin: 3% 5% 3% 5%
 

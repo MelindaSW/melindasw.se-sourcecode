@@ -1,0 +1,97 @@
+<!-- Will contain gallery with 5 or 6 images in a vr environment. Gallery will have a bright feel with some structure on floor and walls.
+check if making black ink drops is possible. -->
+<!-- En A-Frame-scen med ett enhetligt (men möjligen separat tema från sajten i övrigt) som använder minst tre olika “primitives” och en OBJ-modell (ej inräknad i antalet primitives) ska finnas med (i en separat HTML-fil eller “inbäddad” i en annan fil tillsammans med annat innehåll; det gör ingenting om man inte kan navigera bort från webbsidan skapad med A-Frame); man behöver inte skapa OBJ-filen själv, utan man kan använda en (till temat passande) OBJ-fil hittad på webben (Det är acceptabelt att använda andra modellformat som stöds av A-Frame, till exempel GLTF) -->
+
+<!DOCTYPE html>
+<html lang="sv" dir="ltr">
+
+   <head>
+      <meta charset="utf-8">
+      <title>Galleri</title>
+      <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+   </head>
+
+   <body>
+      <a-scene>
+
+         <a-assets>
+            <!-- Textures -->
+            <img id="texture1" src="media/paper-texture1.jpg" alt="wrinkly paper texture">
+            <img id="texture2" src="media/paper-texture2.jpg" alt="paper texture">
+            <img id="wood1" src="media/wood-texture.jpeg" alt="light wood texture">
+            <img id="wood2" src="media/wood-texture2.jpeg" alt="dark wood texture">
+            <!-- Images -->
+            <img id="walk-in-woods" src="media/walk_in_the_woods.jpeg" alt="walk in the woods drawing">
+            <img id="dragon" src="media/dragon.jpeg" alt="dragon drawing">
+            <img id="twirl" src="media/twirl.jpeg" alt="twirl drawing">
+            <img id="forest-fire" src="media/forest-fire.jpeg" alt="forest fire drawing">
+            <img id="bird" src="media/branch_and_bird.jpeg" alt="bird painting">
+
+            <!-- 3D model -->
+            <a-asset-item id="dragonOBJ" src="media/Dragon.obj"></a-asset-item>
+         </a-assets>
+
+         <!-- Surroundings -->
+         <a-sky src="#texture1"></a-sky>
+         <a-plane material="src: #texture1" position="0 0 -7" height="100" width="100" rotation="270 0 0"></a-plane>
+
+         <!-- OBJ model -->
+         <a-entity obj-model="obj: #dragonOBJ" material="src: #texture1" scale="0.03 0.03 0.03" position="5 1.8 -29"></a-entity>
+
+         <!-- Gallery -->
+         <a-entity position="0 0 0">
+
+            <!-- Images with frames and "walls" -->
+
+            <!-- The closest wall -->
+            <a-box material="src: #texture1" shadow="cast: true" position="-3 1.7 -5" depth="0.2" height="10" width="3"></a-box>
+
+            <a-box material="src: #wood2" position="-3 1.7 -4.79" depth="0.02" height="1.3" width="1"></a-box>
+            <a-plane color="white" position="-3 1.7 -4.77" height="1.1" width="0.8"></a-plane>
+            <a-image src="#walk-in-woods" position="-3 1.7 -4.76" height="0.8" width="0.5"></a-image>
+
+            <!-- The wall furthest away -->
+            <a-box material="src: #texture1" position="0 1.7 -20" depth="0.2" height="10" width="3" rotation="0 0 0"></a-box>
+
+            <a-box material="src: #wood2" position="0 1.7 -19.8" depth="0.02" height="1.3" width="1"></a-box>
+            <a-plane color="white" position="0 1.7 -19.78" height="1.1" width="0.8"></a-plane>
+            <a-image src="#dragon" position="0 1.7 -19.77" height="0.8" width="0.5"></a-image>
+
+            <!-- The wall box to the right -->
+            <a-box material="src: #texture1" position="5 1.7 -12" depth="2.5" height="10" width="4.5" rotation="0 20 0"></a-box>
+
+            <a-box material="src: #wood2" position="4.3 1.7 -10.39" depth="0.02" height="1.3" width="1" rotation="0 20 0"></a-box>
+            <a-plane color="white" position="4.3 1.7 -10.37" height="1.1" width="0.8" rotation="0 20 0"></a-plane>
+            <a-image position="4.3 1.7 -10.36" src="#twirl" height="0.8" width="0.5" rotation="0 20 0"></a-image>
+
+            <a-box material="src: #wood2" position="6.3 1.7 -11.09" depth="0.02" height="1.3" width="1" rotation="0 20 0"></a-box>
+            <a-plane color="white" position="6.3 1.7 -11.07" height="1.1" width="0.8" rotation="0 20 0"></a-plane>
+            <a-image position="6.3 1.7 -11.06" src="#forest-fire" height="0.8" width="0.5" rotation="0 20 0"></a-image>
+
+            <!-- The wall to the left  -->
+            <a-box material="src: #texture1" position="-11 1 -12" depth="0.2" height="10" width="3" rotation="0 -15 0"></a-box>
+
+            <a-box material="src: #wood2" position="-11 1.7 -11.90" depth="0.02" height="1.3" width="1" rotation="0 -15 0"></a-box>
+            <a-plane color="white" position="-11 1.7 -11.88" height="1.1" width="0.8" rotation="0 -15 0"></a-plane>
+            <a-image position="-11 1.7 -11.87" src="#bird" rotation="0 -15 0" height="0.8" width="0.5"></a-image>
+
+            <!-- Random structures -->
+            <a-sphere material="src: #texture1" position="0 0 -6" radius="1"></a-sphere>
+            <a-sphere material="src: #texture1" position="-4 0 -3" radius="0.5"></a-sphere>
+            <a-sphere material="src: #texture1" position="-11 0 -12" radius="0.5"></a-sphere>
+            <a-sphere material="src: #texture1" position="1 0 -20" radius="0.7"></a-sphere>
+            <a-sphere material="src: #texture1" position="0 0 -2" radius="0.5"></a-sphere>
+            <a-sphere material="src: #texture1" position="6 0 -11" radius="0.8"></a-sphere>
+            <a-sphere material="src: #texture1" position="6.5 0 -10" radius="0.5"></a-sphere>
+            <a-sphere material="src: #texture1" position="-10 0 -30" radius="10"></a-sphere>
+            <a-sphere material="src: #texture1" position="20 0 -60" radius="15"></a-sphere>
+            <a-sphere material="src: #texture1" position="-50 0 -30" radius="8"></a-sphere>
+            <a-sphere material="src: #texture1" position="-12.9 0 -11.5" radius="0.7"></a-sphere>
+            <a-sphere material="src: #texture1" position="40 0 -40" radius="2"></a-sphere>
+
+         </a-entity>
+
+      </a-scene>
+   </body>
+
+</html>

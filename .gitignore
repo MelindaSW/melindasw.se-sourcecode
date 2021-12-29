@@ -21,7 +21,7 @@ yarn-error.log*
 *.sw?
 
 # media
-school-projects
-src/assets/images
-public/Vr-Gallery/media
+#school-projects
+#src/assets/images
+#public/Vr-Gallery/media
 
