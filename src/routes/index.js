@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { Home, Projects, Gallery, HaikuCreator } from '../views'
+import { Home, Projects, Gallery /*, HaikuCreator*/ } from '../views'
 
 Vue.use(VueRouter)
 
@@ -20,11 +20,11 @@ const routes = [
     name: 'Gallery',
     component: Gallery
   },
-  {
-    path: '/projects/haikucreator',
-    name: 'HaikuCreator',
-    component: HaikuCreator
-  },
+  // {
+  //   path: '/projects/haikucreator',
+  //   name: 'HaikuCreator',
+  //   component: HaikuCreator
+  // },
   {
     path: '/*',
     name: 'Not found',
